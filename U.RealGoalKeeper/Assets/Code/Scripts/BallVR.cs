@@ -1,9 +1,11 @@
 using System.Collections;
+using UnityEditor.Profiling.Memory.Experimental;
 using UnityEngine;
 
 [RequireComponent(typeof(Rigidbody))]
 public class BallVR : MonoBehaviour
 {
+    [SerializeField] private ScoreUpdateCaller scoreUpdateCaller;
     [SerializeField] private float speedMin = 10f;
     [SerializeField] private float speedMax = 10f;
     [SerializeField, Range(0f, 90f)] private float launchAngle = 45f;
@@ -25,6 +27,7 @@ public class BallVR : MonoBehaviour
 
     public void Shot()
     {
+        scoreSent = false;
         float angleRad = launchAngle * Mathf.Deg2Rad;
         var speed = Random.Range(speedMin, speedMax);
         // Horizontal direction based on forward but flattened to the XZ plane
@@ -64,11 +67,17 @@ public class BallVR : MonoBehaviour
         rb.angularVelocity = rb.linearVelocity = Vector3.zero;
         rb.position = _newTransform.position;
         rb.rotation = _newTransform.rotation;
-        //transform.SetPositionAndRotation(_newTransform.position,_newTransform.rotation);
     }
 
-    void FixedUpdate()
+    bool scoreSent;
+    public void SendScore() 
     {
-        col.material = ControlsInputsMonostate.anyGrab ?notBouncyMat:bufferBouncyMat;
+        if (!scoreSent)
+        {
+            scoreSent = true;
+            scoreUpdateCaller.Call();
+        }
     }
+
+    void FixedUpdate() => col.material = ControlsInputsMonostate.anyGrab ? notBouncyMat : bufferBouncyMat;
 }
