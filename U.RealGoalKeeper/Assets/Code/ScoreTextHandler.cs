@@ -15,7 +15,8 @@ public class ScoreTextHandler : MonoBehaviour
 
     private void OnDisable()
     {
-        ScoreManager.Instance.OnScoreUpdated -= UpdateText;
+        if(ScoreManager.Instance!= null)
+            ScoreManager.Instance.OnScoreUpdated -= UpdateText;
     }
 
     void Start()

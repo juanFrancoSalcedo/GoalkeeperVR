@@ -357,6 +357,7 @@ MonoBehaviour:
   launchAngle: 40
   useImpulse: 1
   notBouncyMat: {fileID: 13400000, guid: 4c89343364db5374fbf5a69f7e13cf54, type: 2}
+  bufferBouncyMat: {fileID: 13400000, guid: 75d000e2fc7b7f44a82fbf2304e9eae7, type: 2}
 --- !u!96 &5701827538611536813
 TrailRenderer:
   serializedVersion: 3

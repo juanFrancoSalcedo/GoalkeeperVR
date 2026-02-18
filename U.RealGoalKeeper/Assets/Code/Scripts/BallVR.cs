@@ -11,7 +11,7 @@ public class BallVR : MonoBehaviour
     [SerializeField, Range(0f, 90f)] private float launchAngle = 45f;
     [SerializeField] private bool useImpulse = true;
     [SerializeField] private PhysicsMaterial notBouncyMat = null;
-    PhysicsMaterial bufferBouncyMat = null;
+    [SerializeField] private PhysicsMaterial bufferBouncyMat = null;
 
     private Rigidbody rb;
     private Collider col;
@@ -22,7 +22,6 @@ public class BallVR : MonoBehaviour
         rb.linearVelocity = Vector3.zero;
         rb.angularVelocity = Vector3.zero;
         col = GetComponent<Collider>();
-        bufferBouncyMat = col.material;
     }
 
     public void Shot()
@@ -79,5 +78,5 @@ public class BallVR : MonoBehaviour
         }
     }
 
-    void FixedUpdate() => col.material = ControlsInputsMonostate.anyGrab ? notBouncyMat : bufferBouncyMat;
+    void FixedUpdate() => col.material = ControlsInputsMonostate.anyPunch ? bufferBouncyMat : notBouncyMat;
 }
