@@ -6,11 +6,15 @@ using UnityEngine;
 public class ScoreTextHandler : MonoBehaviour
 {
     [SerializeField] [TextArea(1,2)] private string label = "PUNTAJE:\n@";
+    [SerializeField] bool readOnEnable;
     TMP_Text text;
 
     private void OnEnable()
     {
         ScoreManager.Instance.OnScoreUpdated += UpdateText;
+
+        if (readOnEnable)
+            UpdateText(ScoreManager.Instance.Score);
     }
 
     private void OnDisable()

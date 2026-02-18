@@ -1,5 +1,6 @@
 using B_Extensions;
-using UnityEngine;
+using System;
+using System.Runtime.CompilerServices;
 
 public class ScoreManager : Singleton<ScoreManager>
 {

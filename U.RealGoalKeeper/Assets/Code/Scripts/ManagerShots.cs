@@ -1,4 +1,5 @@
 using System.Collections;
+
 using UnityEngine;
 
 public class ManagerShots : MonoBehaviour
@@ -6,13 +7,13 @@ public class ManagerShots : MonoBehaviour
     [SerializeField] private Transform[] points;
     [SerializeField] private BallVR[] balls;
 
-    float timeNextShot = 10f;
+    float timeNextShot = 8f;
 
+    private void OnEnable() => GameEventBus.Subscribe(StateGameType.End, () => StopAllCoroutines());
 
-    public void CallStartGame() 
-    {
-        StartCoroutine(DoPlay());
-    }
+    private void OnDisable() => GameEventBus.Unsubscribe(StateGameType.End, () => StopAllCoroutines());
+
+    public void CallStartGame() => StartCoroutine(DoPlay());
 
     private IEnumerator DoPlay() 
     {
@@ -32,7 +33,16 @@ public class ManagerShots : MonoBehaviour
 
     private BallVR GetRandomBall() 
     {
-        return balls[Random.Range(0, balls.Length)];
-    }
+        BallVR value = null;
 
+        var attemps = 0;
+        while (attemps<5) 
+        {
+            var i = Random.Range(0, balls.Length);
+            if (!balls[i].Shoot)
+                value = balls[i];
+            attemps++;
+        }
+        return value;
+    }
 }

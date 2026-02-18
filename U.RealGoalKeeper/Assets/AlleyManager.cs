@@ -13,14 +13,15 @@ public class AlleyManager : MonoBehaviour
 
     private IEnumerator DoPlay()
     {
-        while (true)
-        {
-            var alley = GetAlley();
-            alley.gameObject.SetActive(true);
-            yield return new WaitForSecondsRealtime(timeNextShot);
-            if (timeNextShot > 5f)
-                timeNextShot -= 0.3f;
-        }
+        yield return new WaitForSecondsRealtime(timeNextShot);
+        //while (true)
+        //{
+        //    var alley = GetAlley();
+        //    alley.gameObject.SetActive(true);
+        //    yield return new WaitForSecondsRealtime(timeNextShot);
+        //    if (timeNextShot > 5f)
+        //        timeNextShot -= 0.3f;
+        //}
     }
 
     private AlleyHandler GetAlley()

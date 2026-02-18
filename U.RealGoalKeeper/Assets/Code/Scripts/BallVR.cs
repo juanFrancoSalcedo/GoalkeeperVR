@@ -1,5 +1,4 @@
 using System.Collections;
-using UnityEditor.Profiling.Memory.Experimental;
 using UnityEngine;
 
 [RequireComponent(typeof(Rigidbody))]
@@ -12,10 +11,10 @@ public class BallVR : MonoBehaviour
     [SerializeField] private bool useImpulse = true;
     [SerializeField] private PhysicsMaterial notBouncyMat = null;
     [SerializeField] private PhysicsMaterial bufferBouncyMat = null;
-
     private Rigidbody rb;
     private Collider col;
 
+    public bool Shoot = false;
     void Start()
     {
         rb = GetComponent<Rigidbody>();
@@ -26,6 +25,8 @@ public class BallVR : MonoBehaviour
 
     public void Shot()
     {
+        Shoot = true;
+        Invoke(nameof(ResetShoot),5.3f);
         scoreSent = false;
         float angleRad = launchAngle * Mathf.Deg2Rad;
         var speed = Random.Range(speedMin, speedMax);
@@ -59,9 +60,13 @@ public class BallVR : MonoBehaviour
         }
     }
 
-    public void SetTransform(Transform _newTransform) 
+    private void ResetShoot() 
     {
-        print(_newTransform.name);
+        Shoot = false;
+    }
+
+    public void SetTransform(Transform _newTransform)
+    { 
         rb = GetComponent<Rigidbody>();
         rb.angularVelocity = rb.linearVelocity = Vector3.zero;
         rb.position = _newTransform.position;

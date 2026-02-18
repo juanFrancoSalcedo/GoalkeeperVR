@@ -14,17 +14,14 @@ public class GameEventBus : Singleton<GameEventBus>
         base.Awake();
         scoreChecker = new ScoreChecker(ScoreManager.Instance);
     }
-
     private void OnEnable() => timer.OnTimeCompleted += CheckEnd;
 
-    private void OnDisable()
-    {
-        timer.OnTimeCompleted -= CheckEnd;
-    }
+    private void OnDisable() => timer.OnTimeCompleted -= CheckEnd;
 
     public void StartTimer()
     {
         timer.StartTimer();
+        Publish(StateGameType.Start);
     }
 
     private void CheckEnd()
@@ -33,8 +30,8 @@ public class GameEventBus : Singleton<GameEventBus>
             uiStates.ShowWin();
         else
             uiStates.ShowLose();
+        Publish(StateGameType.End);
     }
-
 
     private static readonly IDictionary<StateGameType, UnityEvent>
         Events = new Dictionary<StateGameType, UnityEvent>();
@@ -76,6 +73,7 @@ public class GameEventBus : Singleton<GameEventBus>
 }
 public enum StateGameType
 {
+    Start,
     End
 }
 

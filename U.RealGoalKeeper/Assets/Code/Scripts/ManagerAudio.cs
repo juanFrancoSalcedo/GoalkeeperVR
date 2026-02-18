@@ -1,4 +1,5 @@
 using B_Extensions;
+using TMPro;
 using UnityEngine;
 using UnityEngine.SceneManagement;
 
@@ -20,12 +21,16 @@ public class ManagerAudio : Singleton<ManagerAudio>
     public void PlayMusicGameplay() => musicaGameplay.Play();
     public void PlayMusicCreditos() => musicaCreditos.Play();
 
-    private void Start()
+
+    private void OnEnable()
     {
-        //if (SceneManager.GetActiveScene().name.Contains("GamScene"))
-        //    PlayMusicGameplay();
+        GameEventBus.Subscribe(StateGameType.End,()=>PlayWhistelEnd());        
     }
 
+    private void OnDisable()
+    {
+        GameEventBus.Unsubscribe(StateGameType.End, () => PlayWhistelEnd());
+    }
 }
 
 

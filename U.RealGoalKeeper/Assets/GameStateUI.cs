@@ -15,6 +15,6 @@ public class GameStateUI : MonoBehaviour
     public void ShowLose()
     {
         Container.SetActive(true);
-        PanelLose.SetActive(false);
+        PanelLose.SetActive(true);
     }
 }

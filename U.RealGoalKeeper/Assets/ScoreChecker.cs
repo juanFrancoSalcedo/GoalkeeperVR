@@ -8,7 +8,7 @@ public class ScoreChecker
 
     public bool CheckPass() 
     {
-        if(manager.Score>200)
+        if(manager.Score>50)
             return true;
         return false;
     }
