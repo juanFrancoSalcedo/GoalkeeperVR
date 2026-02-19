@@ -4,7 +4,6 @@ using UnityEngine;
 public class AlleyHandler : MonoBehaviour
 {
     [SerializeField] private TriggerDetector triggerDetector;
-    [SerializeField] private GameObject textWellPrototype;
     [SerializeField] private Transform textWellTransform;
     [SerializeField] private ScoreUpdateCaller callerScore;
     public bool waitingPass;
@@ -18,7 +17,7 @@ public class AlleyHandler : MonoBehaviour
     private void OnEnter(Transform transform)
     {
         callerScore.Call();
-        Instantiate(textWellPrototype, textWellTransform.position, textWellTransform.rotation);
+        TextVFXMediator.Instance.Publish(TypeTextVFX.Pass,textWellTransform.position, textWellTransform.rotation);
         Invoke(nameof(Disable),1.1f);
     }
 

@@ -19,14 +19,13 @@ public class ScoreTextHandler : MonoBehaviour
 
     private void OnDisable()
     {
-        if(ScoreManager.Instance!= null)
+        if(ScoreManager.Instance)
             ScoreManager.Instance.OnScoreUpdated -= UpdateText;
     }
 
-    void Start()
+    void Awake()
     {
         text = GetComponent<TMP_Text>();
-        UpdateText(1);
     }
 
     public void UpdateText(int score) 

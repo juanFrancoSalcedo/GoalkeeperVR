@@ -9,12 +9,12 @@ public class GameStateUI : MonoBehaviour
     public void ShowWin()
     {
         Container.SetActive(true);
-        PanelWin.SetActive(true);
+        //PanelWin.SetActive(true);
     }
 
     public void ShowLose()
     {
         Container.SetActive(true);
-        PanelLose.SetActive(true);
+        //PanelLose.SetActive(true);
     }
 }

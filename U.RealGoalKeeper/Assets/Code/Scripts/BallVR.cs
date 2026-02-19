@@ -1,5 +1,6 @@
 using System.Collections;
 using UnityEngine;
+using UnityEngine.UIElements;
 
 [RequireComponent(typeof(Rigidbody))]
 public class BallVR : MonoBehaviour
@@ -11,23 +12,28 @@ public class BallVR : MonoBehaviour
     [SerializeField] private bool useImpulse = true;
     [SerializeField] private PhysicsMaterial notBouncyMat = null;
     [SerializeField] private PhysicsMaterial bufferBouncyMat = null;
+    [SerializeField] private float restoreInteractebleTime = 4f;
     private Rigidbody rb;
     private Collider col;
 
     public bool Shoot = false;
+    public bool HasGoal = false;
+    public bool HasHandCollide = false;
+    public bool HasGrab = false;
     void Start()
     {
         rb = GetComponent<Rigidbody>();
         rb.linearVelocity = Vector3.zero;
         rb.angularVelocity = Vector3.zero;
         col = GetComponent<Collider>();
+        transform.SetParent(null);
     }
 
     public void Shot()
     {
         Shoot = true;
-        Invoke(nameof(ResetShoot),5.3f);
-        scoreSent = false;
+        HasGoal = HasHandCollide= HasGrab = scoreSent = false;
+        Invoke(nameof(ResetShoot), restoreInteractebleTime);
         float angleRad = launchAngle * Mathf.Deg2Rad;
         var speed = Random.Range(speedMin, speedMax);
         // Horizontal direction based on forward but flattened to the XZ plane
@@ -54,16 +60,29 @@ public class BallVR : MonoBehaviour
             rb.AddForce(impulse, ForceMode.Impulse);
         }
         else
-        {
-            // Directly set velocity change (ignores mass)
             rb.AddForce(initialVelocity, ForceMode.VelocityChange);
-        }
     }
 
-    private void ResetShoot() 
+    Coroutine coroutine;
+    public void AddPunchForce() 
     {
-        Shoot = false;
+        if (coroutine != null)
+        {
+            StopCoroutine(coroutine);
+            coroutine = null;
+        }
+        else
+            StartCoroutine(DoApplyPunch());
     }
+
+    IEnumerator DoApplyPunch() 
+    {
+        yield return new WaitForSeconds(0.1f);
+        rb.linearVelocity *= 2;
+        coroutine = null;
+    }
+
+    private void ResetShoot() => Shoot = false;
 
     public void SetTransform(Transform _newTransform)
     { 
@@ -80,6 +99,7 @@ public class BallVR : MonoBehaviour
         {
             scoreSent = true;
             scoreUpdateCaller.Call();
+            TextVFXMediator.Instance.Publish(TypeTextVFX.Grab);
         }
     }
 

@@ -7,7 +7,6 @@ public class TutorialPresentationController : MonoBehaviour
     [SerializeField] private RectTransform presentation;
     [SerializeField] private PositionPresentation[] positionPresentation;
 
-
     private IEnumerator Start()
     {
         yield return new WaitForSeconds(1f);
@@ -21,27 +20,29 @@ public class TutorialPresentationController : MonoBehaviour
 
     public IEnumerator DoNextCall(int index)
     {
+        int before = index - 1;
+        if(before>=0)
+            positionPresentation[before].Hide();
+        yield return new WaitForSeconds(0.7f);
         positionPresentation[index].Move(presentation);
-        yield return new WaitForSeconds(1.1f);
-        positionPresentation[index].ActionAfter();
+        //positionPresentation[index].ActionAfter();
     }
 }
 
 [System.Serializable]
 public class PositionPresentation
 {
-    [SerializeField] float yPos;
+    [SerializeField] AnimationUIController mainAnim;
     [SerializeField] AnimationTextController textController;
-    [SerializeField] GameObject[] otherObects;
 
     public void Move(RectTransform _rectTransform)
     {
-        _rectTransform.DOLocalMoveY(yPos, 0.9f).SetEase(Ease.Linear);
+        // dont like this
+        mainAnim.transform.parent.gameObject.SetActive(true);
     }
 
-    public void ActionAfter() 
+    public void Hide() 
     {
-        System.Array.ForEach(otherObects,t => t.SetActive(true));
-        textController.ActiveAnimation(1);
+        mainAnim.ActiveAnimation(3);
     }
 }

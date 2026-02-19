@@ -1,5 +1,8 @@
+using System;
 using UnityEngine;
 
+
+[RequireComponent(typeof(ScoreUpdateCaller))]
 public class HandColliderHandler : MonoBehaviour
 {
     [SerializeField] Animator animator;
@@ -8,6 +11,43 @@ public class HandColliderHandler : MonoBehaviour
     [SerializeField] private bool isLeft;
     [SerializeField] private Vector3 posGrabColls;
     [SerializeField] private Vector3 posExtendsColls;
+    //[SerializeField] private float hitForce = 2f; // fuerza aplicada al chocar
+    ScoreUpdateCaller scoreCaller;
+    private void Start()
+    {
+        scoreCaller = GetComponent<ScoreUpdateCaller>();
+    }
+
+    private void OnEnable()
+    {
+        if (collisionPunch.TryGetComponent<CollisionDetector>(out var compo)) 
+        {
+            compo.OnCollisionEntered += CheckCollision;
+        }
+    }
+
+    private void OnDisable()
+    {
+        if (collisionPunch.TryGetComponent<CollisionDetector>(out var compo))
+        {
+            compo.OnCollisionEntered -= CheckCollision;
+        }
+    }
+
+    private void CheckCollision(Collision collision)
+    {
+        if (collision.gameObject.TryGetComponent<BallVR>(out var compo))
+        {
+            if (!compo.HasHandCollide)
+            { 
+                scoreCaller.Call();
+                TextVFXMediator.Instance.Publish(TypeTextVFX.BallAway);
+            }
+            compo.HasHandCollide = true;
+            compo.AddPunchForce();
+        }
+    }
+
     private void Update()
     {
         if (isLeft)

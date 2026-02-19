@@ -4,7 +4,7 @@ using UnityEngine;
 public class ButtonStartGameMediator : BaseButtonAttendant
 {
     [SerializeField] GameEventBus gameController;
-    [SerializeField] ManagerShots shotsManager;
+    [SerializeField] EnemyControllerShots shotsManager;
     [SerializeField] AlleyManager alleyManager;
     private void Start() => buttonComponent.onClick.AddListener(StartSession);
 
