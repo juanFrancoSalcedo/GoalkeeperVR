@@ -1,4 +1,6 @@
 using B_Extensions;
+using System.Collections;
+using System.Threading.Tasks;
 using TMPro;
 using UnityEngine;
 using UnityEngine.SceneManagement;
@@ -10,26 +12,49 @@ public class ManagerAudio : Singleton<ManagerAudio>
     public AudioSource[] whistels;
     public AudioSource whistelStart;
     public AudioSource whistelEnd;
-    public AudioSource musicaInicio;
-    public AudioSource musicaGameplay;
-    public AudioSource musicaCreditos;
+    public AudioSource[] crowds;
+    public AudioSource[] cheers;
     public void PlayKick() => kick[Random.Range(0,kick.Length)].Play();
     public void PlayStart() => startClaps.Play();
     public void PlayWhistelRandom() => whistels[Random.Range(0, whistels.Length)].Play();
     public void PlayWhistelEnd() => whistelEnd.Play();
     public void PlayWhistelStart() => whistelStart.Play();
-    public void PlayMusicGameplay() => musicaGameplay.Play();
-    public void PlayMusicCreditos() => musicaCreditos.Play();
+    public void PlayCheers() => cheers[Random.Range(0, cheers.Length)].Play();
 
+    Coroutine crowdsCor = null;
+
+    public void PlayCrowds() 
+    {
+        if(crowdsCor == null)
+            crowdsCor = StartCoroutine(DoPlayCrowds());
+    }
+
+    private IEnumerator DoPlayCrowds()
+    {
+        AudioSource buffer  = null;
+        while (true) 
+        {
+            var referenceAudio = crowds[Random.Range(0, crowds.Length)];
+            while (ReferenceEquals(buffer, referenceAudio))
+            {
+                referenceAudio = crowds[Random.Range(0, crowds.Length)];
+            }
+            referenceAudio.Play();
+            buffer = referenceAudio;
+            yield return new WaitForSeconds(referenceAudio.clip.length-2);
+        }
+    }
 
     private void OnEnable()
     {
-        GameEventBus.Subscribe(StateGameType.End,()=>PlayWhistelEnd());        
+        GameEventBus.Subscribe(StateGameType.End,()=>PlayWhistelEnd());
+        GameEventBus.Subscribe(StateGameType.Practicing, () => PlayCrowds());
     }
 
     private void OnDisable()
     {
         GameEventBus.Unsubscribe(StateGameType.End, () => PlayWhistelEnd());
+        GameEventBus.Unsubscribe(StateGameType.Practicing, () => PlayCrowds());
     }
 }
 

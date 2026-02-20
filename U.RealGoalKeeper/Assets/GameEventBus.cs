@@ -60,7 +60,7 @@ public class GameEventBus : Singleton<GameEventBus>
         }
     }
 
-    private static void Publish(StateGameType type) 
+    public static void Publish(StateGameType type) 
     {
         UnityEvent thisEvent;
 
@@ -74,6 +74,7 @@ public class GameEventBus : Singleton<GameEventBus>
 public enum StateGameType
 {
     Start,
-    End
+    End,
+    Practicing
 }
 

@@ -13,6 +13,11 @@ public class BallVR : MonoBehaviour
     [SerializeField] private PhysicsMaterial notBouncyMat = null;
     [SerializeField] private PhysicsMaterial bufferBouncyMat = null;
     [SerializeField] private float restoreInteractebleTime = 4f;
+
+    // Spin settings
+    [SerializeField] private Vector3 spinAxis = Vector3.up; // local axis of rotation
+    [SerializeField] private float spinDegreesPerSecond = 0f; // degrees/sec
+
     private Rigidbody rb;
     private Collider col;
 
@@ -20,6 +25,16 @@ public class BallVR : MonoBehaviour
     public bool HasGoal = false;
     public bool HasHandCollide = false;
     public bool HasGrab = false;
+
+    private void OnEnable()
+    {
+        GameEventBus.Subscribe(StateGameType.Start, () => canPassScore = true);
+    }
+
+    private void OnDisable()
+    {
+        GameEventBus.Unsubscribe(StateGameType.Start, () => canPassScore = true);
+    }
     void Start()
     {
         rb = GetComponent<Rigidbody>();
@@ -47,20 +62,15 @@ public class BallVR : MonoBehaviour
             horizontalDir.Normalize();
         }
         else
-        {
             horizontalDir.Normalize();
-        }
 
         Vector3 initialVelocity = horizontalDir * (speed * Mathf.Cos(angleRad)) + Vector3.up * (speed * Mathf.Sin(angleRad));
 
-        if (useImpulse)
-        {
-            // To get the intended delta-v while respecting mass, apply impulse = deltaV * mass
-            Vector3 impulse = initialVelocity * rb.mass;
-            rb.AddForce(impulse, ForceMode.Impulse);
-        }
-        else
-            rb.AddForce(initialVelocity, ForceMode.VelocityChange);
+        Vector3 impulse = initialVelocity * rb.mass;
+        rb.AddForce(impulse, ForceMode.Impulse);
+
+        Vector3 torque = Vector3.Cross(impulse.normalized, Vector3.up) * impulse.magnitude;
+        rb.AddTorque(torque);
     }
 
     Coroutine coroutine;
@@ -78,7 +88,7 @@ public class BallVR : MonoBehaviour
     IEnumerator DoApplyPunch() 
     {
         yield return new WaitForSeconds(0.1f);
-        rb.linearVelocity *= 2;
+        rb.linearVelocity *= 1.5f;
         coroutine = null;
     }
 
@@ -93,13 +103,19 @@ public class BallVR : MonoBehaviour
     }
 
     bool scoreSent;
+    private bool canPassScore;
+
     public void SendScore() 
     {
         if (!scoreSent)
         {
             scoreSent = true;
-            scoreUpdateCaller.Call();
-            TextVFXMediator.Instance.Publish(TypeTextVFX.Grab);
+            if (canPassScore)
+            { 
+                scoreUpdateCaller.Call();
+                TextVFXMediator.Instance.Publish(TypeTextVFX.Grab);
+                ManagerAudio.Instance.PlayCheers();
+            }
         }
     }
 

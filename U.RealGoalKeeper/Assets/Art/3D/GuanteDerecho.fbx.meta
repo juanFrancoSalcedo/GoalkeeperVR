@@ -3,7 +3,12 @@ guid: 2ed7947b6c38c034f9669c086442b935
 ModelImporter:
   serializedVersion: 22200
   internalIDToNameTable: []
-  externalObjects: {}
+  externalObjects:
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Ace Trans Pro.001
+    second: {fileID: 2100000, guid: 8fba4fb06fe3db447893bfc227342837, type: 2}
   materials:
     materialImportMode: 2
     materialName: 0

@@ -19,6 +19,7 @@ public class EnemyHandler : MonoBehaviour
         GameEventBus.Unsubscribe(StateGameType.End, StopAllCoroutines);
     }
 
+    [ContextMenu("Shot")]
     public void StartShot() => StartCoroutine(ShotCoroutine());
 
     private IEnumerator ShotCoroutine()

@@ -13,6 +13,8 @@ public class HandColliderHandler : MonoBehaviour
     [SerializeField] private Vector3 posExtendsColls;
     //[SerializeField] private float hitForce = 2f; // fuerza aplicada al chocar
     ScoreUpdateCaller scoreCaller;
+    private bool canPassScore;
+
     private void Start()
     {
         scoreCaller = GetComponent<ScoreUpdateCaller>();
@@ -24,6 +26,7 @@ public class HandColliderHandler : MonoBehaviour
         {
             compo.OnCollisionEntered += CheckCollision;
         }
+        GameEventBus.Subscribe(StateGameType.Start, () => canPassScore = true);
     }
 
     private void OnDisable()
@@ -32,6 +35,7 @@ public class HandColliderHandler : MonoBehaviour
         {
             compo.OnCollisionEntered -= CheckCollision;
         }
+        GameEventBus.Unsubscribe(StateGameType.Start, () => canPassScore = true);
     }
 
     private void CheckCollision(Collision collision)
@@ -39,9 +43,13 @@ public class HandColliderHandler : MonoBehaviour
         if (collision.gameObject.TryGetComponent<BallVR>(out var compo))
         {
             if (!compo.HasHandCollide)
-            { 
-                scoreCaller.Call();
-                TextVFXMediator.Instance.Publish(TypeTextVFX.BallAway);
+            {
+                if (canPassScore)
+                { 
+                    scoreCaller.Call();
+                    TextVFXMediator.Instance.Publish(TypeTextVFX.BallAway);
+                }
+                ManagerAudio.Instance.PlayCheers();
             }
             compo.HasHandCollide = true;
             compo.AddPunchForce();

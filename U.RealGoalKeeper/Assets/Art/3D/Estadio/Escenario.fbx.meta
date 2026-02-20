@@ -1,0 +1,367 @@
+fileFormatVersion: 2
+guid: e06be249c854b6948b31cf078fa32e52
+ModelImporter:
+  serializedVersion: 22200
+  internalIDToNameTable: []
+  externalObjects:
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Arcos
+    second: {fileID: 2100000, guid: 7b739b157e7c5cb44b3584477b64c502, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Asfalto
+    second: {fileID: 2100000, guid: 47d5384fbd766bf4fba10d9448523aaf, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Cerchas
+    second: {fileID: 2100000, guid: 1ce76727546e6e2479ed3b6f3de8b178, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: CerchasB
+    second: {fileID: 2100000, guid: 7e22b21f8604f7a42b32ab21175439a5, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Cesped
+    second: {fileID: 2100000, guid: cd8e67bfe520cb04988509782165d450, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: CespedBlanco
+    second: {fileID: 2100000, guid: afec3304153fca24aafe5b8eb40cfdba, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: CespedBorde
+    second: {fileID: 2100000, guid: 47d92d43b59452443a9c700e7d452c02, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Color_002
+    second: {fileID: 2100000, guid: 11cfcdbab2456ea4f98b97bd5ccf93a6, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Color_A0
+    second: {fileID: 2100000, guid: 4849222dfb4e49246a22faa22e1f95b6, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Concreto
+    second: {fileID: 2100000, guid: 96da558da14e82140acf7d7f177f5878, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Cubierta
+    second: {fileID: 2100000, guid: 7eb9432c57b682745a5f7001a2406adf, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Escalones
+    second: {fileID: 2100000, guid: 62d054676ade3924990d7213898c8acb, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: IntFachada
+    second: {fileID: 2100000, guid: dab2b6322f7f829499ce585d03f62e18, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: IntFachadaB
+    second: {fileID: 2100000, guid: 7b119709a05b1cc4992a3cd8243f9401, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Luces
+    second: {fileID: 2100000, guid: d601c52ed9bf0ee46b8d77e3a763c95d, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Pantalla
+    second: {fileID: 2100000, guid: d314197b1d8092845bb510db944fb40d, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: PublicidadLogos
+    second: {fileID: 2100000, guid: e123a6e4ab7f867458e60b787fbd08ae, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: PublicidadLogosB
+    second: {fileID: 2100000, guid: a0ef13ddd13401c449e4653a788ec034, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: SillaNegras
+    second: {fileID: 2100000, guid: 45737f807ad1caf459715788d791a4ef, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: SillasBlancas
+    second: {fileID: 2100000, guid: 6f7a09225066fd94e87262a80a4a4c9c, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: SillasBlancasVert
+    second: {fileID: 2100000, guid: c2062f7b69a260846b05da82b7ee0724, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: SillasNegrasVert
+    second: {fileID: 2100000, guid: 4061135ae35bde347977d9c4bf09359c, type: 2}
+  - first:
+      type: UnityEngine:Texture2D
+      assembly: UnityEngine.CoreModule
+      name: Asfalto_BaseColor
+    second: {fileID: 2800000, guid: 3f95f5cdf4c6bea4592271e06bedfc22, type: 3}
+  - first:
+      type: UnityEngine:Texture2D
+      assembly: UnityEngine.CoreModule
+      name: Asfalto_Normal
+    second: {fileID: 2800000, guid: d52f39bb0e70108458685cd226c1f56a, type: 3}
+  - first:
+      type: UnityEngine:Texture2D
+      assembly: UnityEngine.CoreModule
+      name: CerchasA_BaseColor
+    second: {fileID: 2800000, guid: a7acd8831ba43374f953c377c2901935, type: 3}
+  - first:
+      type: UnityEngine:Texture2D
+      assembly: UnityEngine.CoreModule
+      name: CerchasA_Normal
+    second: {fileID: 2800000, guid: 713a3e3870bd99b4fb35c57efcfac57a, type: 3}
+  - first:
+      type: UnityEngine:Texture2D
+      assembly: UnityEngine.CoreModule
+      name: CerchasB_BaseColor
+    second: {fileID: 2800000, guid: 2516589711ac91b47b820dcb9a839fac, type: 3}
+  - first:
+      type: UnityEngine:Texture2D
+      assembly: UnityEngine.CoreModule
+      name: CerchasB_Normal
+    second: {fileID: 2800000, guid: 3fe8a156989e9c64a8302f6368848d6d, type: 3}
+  - first:
+      type: UnityEngine:Texture2D
+      assembly: UnityEngine.CoreModule
+      name: CespedBlanco_BaseColor
+    second: {fileID: 2800000, guid: f89660cb2913ccc478c5fb589c9095fc, type: 3}
+  - first:
+      type: UnityEngine:Texture2D
+      assembly: UnityEngine.CoreModule
+      name: CespedBorde_BaseColor
+    second: {fileID: 2800000, guid: 41ea077ff1decbc47b2b73fe597f04fd, type: 3}
+  - first:
+      type: UnityEngine:Texture2D
+      assembly: UnityEngine.CoreModule
+      name: Cesped_BaseColor
+    second: {fileID: 2800000, guid: 78838c05534e5464cb2fcaa6854eba08, type: 3}
+  - first:
+      type: UnityEngine:Texture2D
+      assembly: UnityEngine.CoreModule
+      name: Cesped_Normal
+    second: {fileID: 2800000, guid: 1297a00bb2db0ed4d827c95bdbdfb27b, type: 3}
+  - first:
+      type: UnityEngine:Texture2D
+      assembly: UnityEngine.CoreModule
+      name: Concreto_BaseColor
+    second: {fileID: 2800000, guid: 7171da0f9a40897489766c3d26fe8b33, type: 3}
+  - first:
+      type: UnityEngine:Texture2D
+      assembly: UnityEngine.CoreModule
+      name: Concreto_Normal
+    second: {fileID: 2800000, guid: b89fbdf9b36898a40ae84244e5703bf4, type: 3}
+  - first:
+      type: UnityEngine:Texture2D
+      assembly: UnityEngine.CoreModule
+      name: Cubierta_BaseColor
+    second: {fileID: 2800000, guid: 038d08c662b291649a2a6aa1ba018502, type: 3}
+  - first:
+      type: UnityEngine:Texture2D
+      assembly: UnityEngine.CoreModule
+      name: Escalones_BaseColor
+    second: {fileID: 2800000, guid: fcaab61bfa5918e4cbced0a084695b58, type: 3}
+  - first:
+      type: UnityEngine:Texture2D
+      assembly: UnityEngine.CoreModule
+      name: Escalones_Normal
+    second: {fileID: 2800000, guid: 26dc2f2bf73731e458faa69ccf1d4895, type: 3}
+  - first:
+      type: UnityEngine:Texture2D
+      assembly: UnityEngine.CoreModule
+      name: IntFachadaA_BaseColor
+    second: {fileID: 2800000, guid: 7fb8d3b71e1870e4bad1142a1dbc59e1, type: 3}
+  - first:
+      type: UnityEngine:Texture2D
+      assembly: UnityEngine.CoreModule
+      name: IntFachadaB_BaseColor
+    second: {fileID: 2800000, guid: 5ee6f9d6fc9edde4bb662567e1ba200f, type: 3}
+  - first:
+      type: UnityEngine:Texture2D
+      assembly: UnityEngine.CoreModule
+      name: Malla_BaseColor
+    second: {fileID: 2800000, guid: 0e600d517e86ea947b4f8d9a3fdfb76a, type: 3}
+  - first:
+      type: UnityEngine:Texture2D
+      assembly: UnityEngine.CoreModule
+      name: Malla_Normal
+    second: {fileID: 2800000, guid: 327508b558485a249a6d18f2a004f978, type: 3}
+  - first:
+      type: UnityEngine:Texture2D
+      assembly: UnityEngine.CoreModule
+      name: PublicidadLogosB_BaseColor
+    second: {fileID: 2800000, guid: 024ea03fba349f44abdb3a9f5e393ace, type: 3}
+  - first:
+      type: UnityEngine:Texture2D
+      assembly: UnityEngine.CoreModule
+      name: PublicidadLogosB_Normal
+    second: {fileID: 2800000, guid: ec117fea5e2e2fa49983a1240da07b04, type: 3}
+  - first:
+      type: UnityEngine:Texture2D
+      assembly: UnityEngine.CoreModule
+      name: PublicidadLogos_BaseColor
+    second: {fileID: 2800000, guid: 5991da462df350a43852c793bf0bdd64, type: 3}
+  - first:
+      type: UnityEngine:Texture2D
+      assembly: UnityEngine.CoreModule
+      name: SillaBlancaV_BaseColor
+    second: {fileID: 2800000, guid: da18b741aa4e1c141805fc6899bcb1bc, type: 3}
+  - first:
+      type: UnityEngine:Texture2D
+      assembly: UnityEngine.CoreModule
+      name: SillaBlanca_BaseColor
+    second: {fileID: 2800000, guid: d9b191cbd478dde41916c706a1fe7d08, type: 3}
+  - first:
+      type: UnityEngine:Texture2D
+      assembly: UnityEngine.CoreModule
+      name: SillaNegraV_BaseColor
+    second: {fileID: 2800000, guid: 05bc434064e1b4d4fa0854335c3cf2f7, type: 3}
+  - first:
+      type: UnityEngine:Texture2D
+      assembly: UnityEngine.CoreModule
+      name: SillaNegra_BaseColor
+    second: {fileID: 2800000, guid: dfe93cc8a5cc51d4f8a9c963ddc7490c, type: 3}
+  - first:
+      type: UnityEngine:Texture2D
+      assembly: UnityEngine.CoreModule
+      name: SillasV_Normal
+    second: {fileID: 2800000, guid: f008b15dfd4df454da5534d26688ef8f, type: 3}
+  - first:
+      type: UnityEngine:Texture2D
+      assembly: UnityEngine.CoreModule
+      name: Sillas_Normal
+    second: {fileID: 2800000, guid: e2d4d1b4ae9db6c4cacc6f17f658ac07, type: 3}
+  - first:
+      type: UnityEngine:Texture2D
+      assembly: UnityEngine.CoreModule
+      name: Vidrio_BaseColor
+    second: {fileID: 2800000, guid: 5981c37613bb75a47b90d897fd1563ca, type: 3}
+  - first:
+      type: UnityEngine:Texture2D
+      assembly: UnityEngine.CoreModule
+      name: Vidrio_Normal
+    second: {fileID: 2800000, guid: 2eea7bc3331f60a4781c9be70b23023a, type: 3}
+  materials:
+    materialImportMode: 2
+    materialName: 0
+    materialSearch: 1
+    materialLocation: 1
+  animations:
+    legacyGenerateAnimations: 4
+    bakeSimulation: 0
+    resampleCurves: 1
+    optimizeGameObjects: 0
+    removeConstantScaleCurves: 0
+    motionNodeName: 
+    animationImportErrors: 
+    animationImportWarnings: 
+    animationRetargetingWarnings: 
+    animationDoRetargetingWarnings: 0
+    importAnimatedCustomProperties: 0
+    importConstraints: 0
+    animationCompression: 1
+    animationRotationError: 0.5
+    animationPositionError: 0.5
+    animationScaleError: 0.5
+    animationWrapMode: 0
+    extraExposedTransformPaths: []
+    extraUserProperties: []
+    clipAnimations: []
+    isReadable: 0
+  meshes:
+    lODScreenPercentages: []
+    globalScale: 1
+    meshCompression: 0
+    addColliders: 0
+    useSRGBMaterialColor: 1
+    sortHierarchyByName: 1
+    importPhysicalCameras: 1
+    importVisibility: 1
+    importBlendShapes: 1
+    importCameras: 1
+    importLights: 1
+    nodeNameCollisionStrategy: 1
+    fileIdsGeneration: 2
+    swapUVChannels: 0
+    generateSecondaryUV: 0
+    useFileUnits: 1
+    keepQuads: 0
+    weldVertices: 1
+    bakeAxisConversion: 0
+    preserveHierarchy: 0
+    skinWeightsMode: 0
+    maxBonesPerVertex: 4
+    minBoneWeight: 0.001
+    optimizeBones: 1
+    meshOptimizationFlags: -1
+    indexFormat: 0
+    secondaryUVAngleDistortion: 8
+    secondaryUVAreaDistortion: 15.000001
+    secondaryUVHardAngle: 88
+    secondaryUVMarginMethod: 1
+    secondaryUVMinLightmapResolution: 40
+    secondaryUVMinObjectScale: 1
+    secondaryUVPackMargin: 4
+    useFileScale: 1
+    strictVertexDataChecks: 0
+  tangentSpace:
+    normalSmoothAngle: 60
+    normalImportMode: 0
+    tangentImportMode: 3
+    normalCalculationMode: 4
+    legacyComputeAllNormalsFromSmoothingGroupsWhenMeshHasBlendShapes: 0
+    blendShapeNormalImportMode: 1
+    normalSmoothingSource: 0
+  referencedClips: []
+  importAnimation: 1
+  humanDescription:
+    serializedVersion: 3
+    human: []
+    skeleton: []
+    armTwist: 0.5
+    foreArmTwist: 0.5
+    upperLegTwist: 0.5
+    legTwist: 0.5
+    armStretch: 0.05
+    legStretch: 0.05
+    feetSpacing: 0
+    globalScale: 1
+    rootMotionBoneName: 
+    hasTranslationDoF: 0
+    hasExtraRoot: 0
+    skeletonHasParents: 1
+  lastHumanDescriptionAvatarSource: {instanceID: 0}
+  autoGenerateAvatarMappingIfUnspecified: 1
+  animationType: 2
+  humanoidOversampling: 1
+  avatarSetup: 0
+  addHumanoidExtraRootOnlyWhenUsingAvatar: 1
+  importBlendShapeDeformPercent: 1
+  remapMaterialsIfMaterialImportModeIsNone: 0
+  additionalBone: 0
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 

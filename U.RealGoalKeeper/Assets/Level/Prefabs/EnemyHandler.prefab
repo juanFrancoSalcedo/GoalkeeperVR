@@ -426,7 +426,7 @@ MonoBehaviour:
   stateEnable: 0
   timeDelay: 0
   reference:
-    UniqueId: 8P18IJ5RY94N
+    UniqueId: 8USSHF4SMTOL
     handler: {fileID: 4333523309328528542}
     sceneName: White Box
 --- !u!1 &8867982397617197328

@@ -6,12 +6,14 @@ public class ButtonStartGameMediator : BaseButtonAttendant
     [SerializeField] GameEventBus gameController;
     [SerializeField] EnemyControllerShots shotsManager;
     [SerializeField] AlleyManager alleyManager;
+    [SerializeField] Timer timer;
     private void Start() => buttonComponent.onClick.AddListener(StartSession);
 
     [ContextMenu("Restart")]
     private void StartSession()
     {
-        gameController.StartTimer();
+        //gameController.StartTimer();
+        GameEventBus.Publish(StateGameType.Practicing);
         shotsManager.CallStartGame();
         alleyManager.CallStartGame();
         ManagerAudio.Instance.PlayStart();
