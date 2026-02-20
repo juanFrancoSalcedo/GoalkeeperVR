@@ -139,6 +139,8 @@ MonoBehaviour:
   frames:
   - {fileID: 3123889391830254671}
   - {fileID: 8091482983079952607}
+  gizmoColor: {r: 1, g: 0.92156863, b: 0.015686275, a: 1}
+  gizmoLength: 3
 --- !u!1 &702927630258544628
 GameObject:
   m_ObjectHideFlags: 0

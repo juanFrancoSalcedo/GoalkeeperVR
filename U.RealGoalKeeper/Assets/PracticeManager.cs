@@ -34,7 +34,7 @@ public class PracticeManager : MonoBehaviour
 
     private void ReadShot()
     {
-        if (count >= 0)
+        if (count <0)
             return;
         count++;
         text.text = label.Replace("@",count.ToString());

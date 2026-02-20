@@ -20,6 +20,7 @@ public class ToggleTextureSetter : BaseToggleAttendant
         if (textureSetter == null)
             return;
         textureSetter.SetTextureGloves(textures);
+        ManagerAudio.Instance.PlaySelectUI();
         outline.enabled = active;
     }
 }

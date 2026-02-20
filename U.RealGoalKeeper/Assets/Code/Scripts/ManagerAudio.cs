@@ -14,12 +14,15 @@ public class ManagerAudio : Singleton<ManagerAudio>
     public AudioSource whistelEnd;
     public AudioSource[] crowds;
     public AudioSource[] cheers;
+    public AudioSource select;
     public void PlayKick() => kick[Random.Range(0,kick.Length)].Play();
     public void PlayStart() => startClaps.Play();
     public void PlayWhistelRandom() => whistels[Random.Range(0, whistels.Length)].Play();
     public void PlayWhistelEnd() => whistelEnd.Play();
     public void PlayWhistelStart() => whistelStart.Play();
     public void PlayCheers() => cheers[Random.Range(0, cheers.Length)].Play();
+
+    public void PlaySelectUI()=> select.Play();
 
     Coroutine crowdsCor = null;
 
