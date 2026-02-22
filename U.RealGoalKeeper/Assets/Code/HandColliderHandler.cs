@@ -5,6 +5,7 @@ using UnityEngine;
 [RequireComponent(typeof(ScoreUpdateCaller))]
 public class HandColliderHandler : MonoBehaviour
 {
+    [SerializeField] ReduceVelocityBallTrigger triggerReduce;
     [SerializeField] Animator animator;
     [SerializeField] GameObject collisionPunch;
     [SerializeField] GameObject collisionExtends;
@@ -65,24 +66,24 @@ public class HandColliderHandler : MonoBehaviour
                 animator.SetBool("Grab",true);
                 transform.localPosition = posGrabColls;
             }
-
             if (OVRInput.GetUp(OVRInput.Button.PrimaryHandTrigger))
             { 
                 animator.SetBool("Grab", false);
                 transform.localPosition = posExtendsColls;
             }
-
             if (OVRInput.GetDown(OVRInput.Button.PrimaryIndexTrigger))
             {
                 collisionPunch.SetActive(true);
                 collisionExtends.SetActive(false);
                 animator.SetBool("Punch", true);
+                triggerReduce.CheckPunch(true);
             }
             if (OVRInput.GetUp(OVRInput.Button.PrimaryIndexTrigger))
             {
                 collisionPunch.SetActive(false);
                 collisionExtends.SetActive(true);
                 animator.SetBool("Punch", false);
+                triggerReduce.CheckPunch(false);
             }
         }
         else
@@ -91,25 +92,25 @@ public class HandColliderHandler : MonoBehaviour
             { 
                 animator.SetBool("Grab", true);
                 transform.localPosition = posGrabColls;
-
             }
             if (OVRInput.GetUp(OVRInput.Button.SecondaryHandTrigger))
             { 
                 animator.SetBool("Grab", false);
                 transform.localPosition = posExtendsColls;
             }
-
             if (OVRInput.GetDown(OVRInput.Button.SecondaryIndexTrigger))
             {
                 collisionPunch.SetActive(true);
                 collisionExtends.SetActive(false);
                 animator.SetBool("Punch", true);
+                triggerReduce.CheckPunch(true);
             }
             if (OVRInput.GetUp(OVRInput.Button.SecondaryIndexTrigger))
             {
                 collisionPunch.SetActive(false);
                 collisionExtends.SetActive(true);
                 animator.SetBool("Punch", false);
+                triggerReduce.CheckPunch(false);
             }
         }
 

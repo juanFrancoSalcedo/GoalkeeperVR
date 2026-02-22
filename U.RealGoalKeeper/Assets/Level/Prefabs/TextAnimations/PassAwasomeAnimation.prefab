@@ -104,7 +104,7 @@ MonoBehaviour:
       m_Calls: []
   m_text: 'Buen Pase
 
-    20'
+    40'
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 69073673146267943ad5fe949df3a1cf, type: 2}
   m_sharedMaterial: {fileID: 6100288875868537895, guid: 69073673146267943ad5fe949df3a1cf, type: 2}
@@ -363,7 +363,7 @@ GameObject:
   - component: {fileID: 2199373728502003578}
   - component: {fileID: 2548837969802632449}
   m_Layer: 0
-  m_Name: PassAnimation
+  m_Name: PassAwasomeAnimation
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -418,7 +418,7 @@ MonoBehaviour:
   fovCamera: {fileID: 0}
   cameraOverride: {fileID: 0}
   enableNumber: 1
-  number: 20
+  number: 40
   numberSettings:
     bold: 0
     italic: 0

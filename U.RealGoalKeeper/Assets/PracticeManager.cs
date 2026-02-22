@@ -7,8 +7,6 @@ public class PracticeManager : MonoBehaviour
 {
     [SerializeField] private string label;
     [SerializeField] private TMP_Text text;
-    [SerializeField] private EnemyControllerShots managerShot;
-
     int count =0;
 
     private void Start()
@@ -18,7 +16,7 @@ public class PracticeManager : MonoBehaviour
 
     private void OnEnable()
     {
-        managerShot.OnCallShot += ReadShot;
+        EnemyControllerShots.OnCallShot += ReadShot;
         GameEventBus.Subscribe(StateGameType.Practicing, () => {  
             GetComponent<BaseDoAnimationController>().ActiveAnimation(1);
         });
@@ -26,7 +24,7 @@ public class PracticeManager : MonoBehaviour
 
     private void OnDisable()
     {
-        managerShot.OnCallShot -= ReadShot;
+        EnemyControllerShots.OnCallShot -= ReadShot;
         GameEventBus.Unsubscribe(StateGameType.Practicing, () => {
             GetComponent<BaseDoAnimationController>().ActiveAnimation(1);
         });

@@ -78,7 +78,7 @@ SpriteRenderer:
   m_SortingOrder: 0
   m_Sprite: {fileID: 21300000, guid: 4cfd6e6decd5cf649a634ed1ce31a3fa, type: 3}
   m_Color: {r: 0, g: 0, b: 0, a: 0.28235295}
-  m_FlipX: 0
+  m_FlipX: 1
   m_FlipY: 0
   m_DrawMode: 0
   m_Size: {x: 9.92, y: 10.56}
@@ -112,7 +112,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 557491202813435726}
   serializedVersion: 2
-  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: -1.112, y: -2.3151093, z: 9.9558115}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
@@ -120,6 +120,7 @@ Transform:
   - {fileID: 4506647403164326443}
   - {fileID: 1704167367245101846}
   - {fileID: 2620686435905790563}
+  - {fileID: 6030645177129744839}
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!114 &4908171592802455597
@@ -135,12 +136,18 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   ball: {fileID: 0}
-  shotPos: {fileID: 2620686435905790563}
+  shotPosStationary: {fileID: 2620686435905790563}
+  shotPosBondaries: {fileID: 6030645177129744839}
   frames:
   - {fileID: 3123889391830254671}
   - {fileID: 8091482983079952607}
-  gizmoColor: {r: 1, g: 0.92156863, b: 0.015686275, a: 1}
-  gizmoLength: 3
+  sprites:
+  - {fileID: 7982695578251867151}
+  - {fileID: 7563326803971896598}
+  - {fileID: 9072617846970899488}
+  - {fileID: 8563960478592663139}
+  flipX: 1
+  gizmoLength: 10.05
 --- !u!1 &702927630258544628
 GameObject:
   m_ObjectHideFlags: 0
@@ -151,7 +158,7 @@ GameObject:
   m_Component:
   - component: {fileID: 2620686435905790563}
   m_Layer: 0
-  m_Name: ShotPosition
+  m_Name: ShotPositionStationary
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -165,13 +172,13 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 702927630258544628}
   serializedVersion: 2
-  m_LocalRotation: {x: -0, y: -0.9978805, z: -0, w: -0.065072544}
-  m_LocalPosition: {x: -0.53999996, y: 0, z: -0.35999966}
+  m_LocalRotation: {x: -0, y: -0.9988278, z: -0, w: -0.04840581}
+  m_LocalPosition: {x: 0.32, y: 0, z: -0.39}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 3141475237864465780}
-  m_LocalEulerAnglesHint: {x: 0, y: -187.462, z: 0}
+  m_LocalEulerAnglesHint: {x: 0, y: -185.549, z: 0}
 --- !u!1 &1052511999449534316
 GameObject:
   m_ObjectHideFlags: 0
@@ -250,7 +257,7 @@ SpriteRenderer:
   m_SortingOrder: 0
   m_Sprite: {fileID: 21300000, guid: 21cd223d14720ff458be9dcf2c478b60, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
-  m_FlipX: 0
+  m_FlipX: 1
   m_FlipY: 0
   m_DrawMode: 0
   m_Size: {x: 9.92, y: 10.56}
@@ -259,6 +266,37 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
+--- !u!1 &1731375295100405617
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 6030645177129744839}
+  m_Layer: 0
+  m_Name: ShotPositionBoundary
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &6030645177129744839
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1731375295100405617}
+  serializedVersion: 2
+  m_LocalRotation: {x: -0, y: -0.99960107, z: -0, w: -0.028243294}
+  m_LocalPosition: {x: 0.31999993, y: 0, z: -0.39000034}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 3141475237864465780}
+  m_LocalEulerAnglesHint: {x: 0, y: -183.237, z: 0}
 --- !u!1 &3123889391830254671
 GameObject:
   m_ObjectHideFlags: 0
@@ -370,7 +408,7 @@ SpriteRenderer:
   m_SortingOrder: 0
   m_Sprite: {fileID: 21300000, guid: 21cd223d14720ff458be9dcf2c478b60, type: 3}
   m_Color: {r: 0, g: 0, b: 0, a: 0.28235295}
-  m_FlipX: 0
+  m_FlipX: 1
   m_FlipY: 0
   m_DrawMode: 0
   m_Size: {x: 9.92, y: 10.56}
@@ -428,7 +466,7 @@ MonoBehaviour:
   stateEnable: 0
   timeDelay: 0
   reference:
-    UniqueId: 8USSHF4SMTOL
+    UniqueId: RGV2GV01F5IL
     handler: {fileID: 4333523309328528542}
     sceneName: White Box
 --- !u!1 &8867982397617197328
@@ -509,7 +547,7 @@ SpriteRenderer:
   m_SortingOrder: 0
   m_Sprite: {fileID: 21300000, guid: 4cfd6e6decd5cf649a634ed1ce31a3fa, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
-  m_FlipX: 0
+  m_FlipX: 1
   m_FlipY: 0
   m_DrawMode: 0
   m_Size: {x: 9.92, y: 10.56}
