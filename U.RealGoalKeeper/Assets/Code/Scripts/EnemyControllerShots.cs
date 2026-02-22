@@ -8,7 +8,7 @@ public class EnemyControllerShots : MonoBehaviour
     [SerializeField] private List<EnemyHandler> enemies = new List<EnemyHandler>();
 
     float timeNextShot = 6f;
-    public event System.Action OnCallShot;
+    public static event System.Action OnCallShot;
     private void OnEnable() => GameEventBus.Subscribe(StateGameType.End, () => StopAllCoroutines());
 
     private void OnDisable() => GameEventBus.Unsubscribe(StateGameType.End, () => StopAllCoroutines());

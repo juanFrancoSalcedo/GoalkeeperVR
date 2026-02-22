@@ -18,13 +18,11 @@ namespace B_Extensions.DebugHandler
 
         private void ReceiveLog(string condition, string stackTrace, LogType type)
         {
-            if (type == LogType.Error)
-            { 
-                var clone = Instantiate(prototype, content);
-                clone.DrawText(condition+"_____"+stackTrace,type);
-                if(cardsLog.Count<200)
-                    cardsLog.Add(clone);
-            }
+            var clone = Instantiate(prototype, content);
+            clone.DrawText(condition+"_____"+stackTrace,type);
+            if(cardsLog.Count<200)
+                cardsLog.Add(clone);
+            
         }
 
         public void Clean() 

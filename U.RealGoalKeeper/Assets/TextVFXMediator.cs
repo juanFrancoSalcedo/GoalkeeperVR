@@ -10,6 +10,7 @@ public class TextVFXMediator : Singleton<TextVFXMediator>
     [SerializeField] DamageNumberMesh goalTextAnim;
     [SerializeField] DamageNumberMesh ballAwayTextAnim;
     [SerializeField] DamageNumberMesh passAwayTextAnim;
+    [SerializeField] DamageNumberMesh passAwasomeAwayTextAnim;
     [SerializeField] DamageNumberMesh grabAwayTextAnim;
     [SerializeField] Transform targetPos;
 
@@ -22,6 +23,7 @@ public class TextVFXMediator : Singleton<TextVFXMediator>
         textsTypes.Add(TypeTextVFX.Goal,goalTextAnim);
         textsTypes.Add(TypeTextVFX.BallAway, ballAwayTextAnim);
         textsTypes.Add(TypeTextVFX.Pass, passAwayTextAnim);
+        textsTypes.Add(TypeTextVFX.PassAwasome, passAwasomeAwayTextAnim);
         textsTypes.Add(TypeTextVFX.Grab, grabAwayTextAnim);
     }
 
@@ -45,4 +47,5 @@ public enum TypeTextVFX
     BallAway,
     Pass,
     Grab,
+    PassAwasome
 }

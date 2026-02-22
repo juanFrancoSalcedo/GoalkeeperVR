@@ -73,6 +73,12 @@ public class BallVR : MonoBehaviour
         rb.AddTorque(torque);
     }
 
+    public void ReduceVelocity() 
+    {
+
+        rb.linearVelocity *= 0.2f;
+    }
+
     Coroutine coroutine;
     public void AddPunchForce() 
     {
@@ -105,11 +111,12 @@ public class BallVR : MonoBehaviour
     bool scoreSent;
     private bool canPassScore;
 
+    // from editor, Wrapper event on Grab
     public void SendScore() 
     {
         if (!scoreSent)
         {
-            scoreSent = true;
+            scoreSent = HasGrab = true;
             if (canPassScore)
             { 
                 scoreUpdateCaller.Call();

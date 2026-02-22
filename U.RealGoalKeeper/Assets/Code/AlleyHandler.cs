@@ -6,7 +6,7 @@ public class AlleyHandler : MonoBehaviour
     [SerializeField] private TriggerDetector triggerDetector;
     [SerializeField] private Transform textWellTransform;
     [SerializeField] private ScoreUpdateCaller callerScore;
-    public bool waitingPass;
+    [SerializeField] private bool isAwasome = false;
     private bool canPassScore = false;
     private void OnEnable()
     {
@@ -27,7 +27,7 @@ public class AlleyHandler : MonoBehaviour
         if (canPassScore)
         { 
             callerScore.Call();
-            TextVFXMediator.Instance.Publish(TypeTextVFX.Pass,textWellTransform.position, textWellTransform.rotation);
+            TextVFXMediator.Instance.Publish(isAwasome?TypeTextVFX.PassAwasome: TypeTextVFX.Pass, textWellTransform.position, textWellTransform.rotation);
         }
         Invoke(nameof(Disable),1.1f);
     }
