@@ -2335,7 +2335,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 7367198740142610487, guid: c52cce044821dcc4a9d0b5895a2563c7, type: 3}
       propertyPath: speedMin
-      value: 8.5
+      value: 8.8
       objectReference: {fileID: 0}
     - target: {fileID: 7367198740142610487, guid: c52cce044821dcc4a9d0b5895a2563c7, type: 3}
       propertyPath: spinAxis.x
@@ -14124,7 +14124,7 @@ RectTransform:
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
   m_AnchoredPosition: {x: 0, y: 0}
-  m_SizeDelta: {x: 1243, y: 1215.16}
+  m_SizeDelta: {x: 1000, y: 583}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &510313382
 MonoBehaviour:
@@ -14146,7 +14146,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_Sprite: {fileID: -277539969, guid: 21974f93bf26cd64091f971a8d2a18e7, type: 3}
+  m_Sprite: {fileID: 21300000, guid: 33b3f667eb9020a45ae22481a5672be2, type: 3}
   m_Type: 0
   m_PreserveAspect: 0
   m_FillCenter: 1
@@ -16963,7 +16963,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 7367198740142610487, guid: c52cce044821dcc4a9d0b5895a2563c7, type: 3}
       propertyPath: speedMin
-      value: 8.5
+      value: 8.8
       objectReference: {fileID: 0}
     - target: {fileID: 7367198740142610487, guid: c52cce044821dcc4a9d0b5895a2563c7, type: 3}
       propertyPath: spinAxis.x
@@ -18284,7 +18284,7 @@ MonoBehaviour:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 851398888}
-  m_Enabled: 1
+  m_Enabled: 0
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: bdbdf84d00be1ba47889bfb6c6facbc8, type: 3}
   m_Name: 
@@ -20063,6 +20063,37 @@ BoxCollider:
   serializedVersion: 3
   m_Size: {x: 0.8281392, y: 0.32844877, z: 0.23264818}
   m_Center: {x: -0.0032535188, y: -0.1691828, z: -0.13461593}
+--- !u!1 &955209160
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 955209161}
+  m_Layer: 0
+  m_Name: hilton (1)
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 0
+--- !u!4 &955209161
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 955209160}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &969517424
 GameObject:
   m_ObjectHideFlags: 0
@@ -23777,7 +23808,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 7367198740142610487, guid: c52cce044821dcc4a9d0b5895a2563c7, type: 3}
       propertyPath: speedMin
-      value: 8.5
+      value: 8.8
       objectReference: {fileID: 0}
     - target: {fileID: 7367198740142610487, guid: c52cce044821dcc4a9d0b5895a2563c7, type: 3}
       propertyPath: spinAxis.x
@@ -41202,7 +41233,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 7367198740142610487, guid: c52cce044821dcc4a9d0b5895a2563c7, type: 3}
       propertyPath: speedMin
-      value: 8.5
+      value: 8.8
       objectReference: {fileID: 0}
     - target: {fileID: 7367198740142610487, guid: c52cce044821dcc4a9d0b5895a2563c7, type: 3}
       propertyPath: spinAxis.x
@@ -42348,7 +42379,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 7367198740142610487, guid: c52cce044821dcc4a9d0b5895a2563c7, type: 3}
       propertyPath: speedMin
-      value: 8.5
+      value: 8.8
       objectReference: {fileID: 0}
     - target: {fileID: 7367198740142610487, guid: c52cce044821dcc4a9d0b5895a2563c7, type: 3}
       propertyPath: spinAxis.x
@@ -44193,6 +44224,37 @@ MeshFilter:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 2015988580}
   m_Mesh: {fileID: 10210, guid: 0000000000000000e000000000000000, type: 0}
+--- !u!1 &2018206550
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 2018206551}
+  m_Layer: 0
+  m_Name: hilton
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 0
+--- !u!4 &2018206551
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2018206550}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &2018678131
 GameObject:
   m_ObjectHideFlags: 0
@@ -45068,7 +45130,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: 1:30
+  m_text: 2:00
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 905a5ffd2984cb34ea103134f318ed5f, type: 2}
   m_sharedMaterial: {fileID: -3239840781549108123, guid: 905a5ffd2984cb34ea103134f318ed5f, type: 2}
@@ -47865,3 +47927,5 @@ SceneRoots:
   - {fileID: 1338192650}
   - {fileID: 1107595244}
   - {fileID: 507667341}
+  - {fileID: 2018206551}
+  - {fileID: 955209161}
