@@ -21,10 +21,10 @@ public class EnemyControllerShots : MonoBehaviour
         {
             EnemyHandler Enemy = GetAvailableEnemy();
             Enemy.gameObject.SetActive(true);
-            yield return new WaitForSecondsRealtime(Random.Range(0,3f));
+            yield return new WaitForSeconds(Random.Range(0,3f));
             Enemy.StartShot();
             OnCallShot?.Invoke();
-            yield return new WaitForSecondsRealtime(timeNextShot);
+            yield return new WaitForSeconds(timeNextShot);
             if(timeNextShot > 5f)
                 timeNextShot -= 0.3f;
         }

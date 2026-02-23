@@ -98,7 +98,7 @@ namespace B_Extensions.HierarchyStates
                 bool state = i.stateInHierarchy;
                 i.reference.SetActive(state);
             });
-            yield return new WaitForSecondsRealtime(0.05f);
+            yield return new WaitForSeconds(0.05f);
             if(gameObject != null)
                 record.Remove(record.Last());
 

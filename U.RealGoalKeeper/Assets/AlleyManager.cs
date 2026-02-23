@@ -13,7 +13,7 @@ public class AlleyManager : MonoBehaviour
 
     private IEnumerator DoPlay()
     {
-        yield return new WaitForSecondsRealtime(timeNextShot);
+        yield return new WaitForSeconds(timeNextShot);
         //while (true)
         //{
         //    var alley = GetAlley();

@@ -40,7 +40,7 @@ public class PlayerPrefsEventListener : MonoBehaviour
     {
         while (periodic) 
         {
-            yield return new WaitForSecondsRealtime(1f);
+            yield return new WaitForSeconds(1f);
             CheckExist();
         }
     }
