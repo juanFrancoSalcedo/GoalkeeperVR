@@ -26,12 +26,11 @@ public class EnemyHandler : MonoBehaviour
     {
         sprites.ForEach(spt => spt.flipX = flipX);
         //sprites.ForEach(spt => spt.color = isStationary?Color.blue:Color.red);
-        //GameEventBus.Subscribe(StateGameType.Start,StartShot);
         GameEventBus.Subscribe(StateGameType.End, StopAllCoroutines);
     }
     private void OnDisable()
     {
-        //GameEventBus.Unsubscribe(StateGameType.Start, StartShot);
+
         GameEventBus.Unsubscribe(StateGameType.End, StopAllCoroutines);
     }
 

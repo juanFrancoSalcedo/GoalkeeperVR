@@ -14,9 +14,9 @@ public class ScrollSponsors : MonoBehaviour
         while (true) 
         {
             center.ActiveAnimation(0);
-            yield return new WaitForSecondsRealtime(3f);
+            yield return new WaitForSeconds(3f);
             center.ActiveAnimation(1);
-            yield return new WaitForSecondsRealtime(0.1f);
+            yield return new WaitForSeconds(0.1f);
             index++;
             if(index==spt.Length)
                 index = 0;

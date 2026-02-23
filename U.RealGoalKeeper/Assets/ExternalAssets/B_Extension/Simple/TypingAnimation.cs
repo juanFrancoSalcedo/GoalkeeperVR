@@ -28,7 +28,7 @@ public class TypingAnimation
             indexChar++;
             if (indexChar >= bufferText.Length)
                 completed = true;
-            yield return new WaitForSecondsRealtime(fullTime);
+            yield return new WaitForSeconds(fullTime);
         }
         textComponent.text = text;
     }
