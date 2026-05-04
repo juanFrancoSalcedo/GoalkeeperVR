@@ -1,4 +1,4 @@
-﻿internal interface IFormControllable
+﻿public interface IFormControllable
 {
     public IFormSubmitable FormSubmitable { get; set; }
     public void Submit();

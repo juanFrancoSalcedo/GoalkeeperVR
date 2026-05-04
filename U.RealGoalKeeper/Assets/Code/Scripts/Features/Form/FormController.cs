@@ -44,7 +44,7 @@ public class FormController : MonoBehaviour, IFormControllable
 
     private void Start()
     {
-
+        FormSubmitable.Configure(this);
     }
 
     private void OnEnable()
@@ -55,8 +55,8 @@ public class FormController : MonoBehaviour, IFormControllable
         InputMail.GetComponent<IFormInput>().OnUpdateState += CheckInputEmail;
         InputMail.GetComponent<IFormInput>().OnError += ErrorInput;
 
-        RadialAge.GetComponent<IFormInput>().OnUpdateState += CheckInputAge;
-        RadialAge.GetComponent<IFormInput>().OnError += ErrorInput;
+        //RadialAge.GetComponent<IFormInput>().OnUpdateState += CheckInputAge;
+        //RadialAge.GetComponent<IFormInput>().OnError += ErrorInput;
 
         Cellphone.GetComponent<IFormInput>().OnUpdateState += CheckInputCellphone;
         Cellphone.GetComponent<IFormInput>().OnError += ErrorInput;
@@ -86,8 +86,8 @@ public class FormController : MonoBehaviour, IFormControllable
         InputMail.GetComponent<IFormInput>().OnUpdateState -= CheckInputEmail;
         InputMail.GetComponent<IFormInput>().OnError -= ErrorInput;
 
-        RadialAge.GetComponent<IFormInput>().OnUpdateState -= CheckInputAge;
-        RadialAge.GetComponent<IFormInput>().OnError -= ErrorInput;
+        //RadialAge.GetComponent<IFormInput>().OnUpdateState -= CheckInputAge;
+        //RadialAge.GetComponent<IFormInput>().OnError -= ErrorInput;
 
         Cellphone.GetComponent<IFormInput>().OnUpdateState -= CheckInputCellphone;
         Cellphone.GetComponent<IFormInput>().OnError -= ErrorInput;
@@ -116,6 +116,7 @@ public class FormController : MonoBehaviour, IFormControllable
 
     private void CheckInputCellphone(object obj)
     {
+        print("Juego");
         ErrorInput(string.Empty);
         CheckAll();
     }
@@ -159,22 +160,34 @@ public class FormController : MonoBehaviour, IFormControllable
 
     private void ErrorInput(string obj) => textError.text = obj;
 
-    bool[] passeds = new bool[4];
+    bool[] passeds = new bool[3];
     private void CheckAll()
     {
         // ther order is necessary
         passeds[0] = InputName.GetComponent<IFormInput>().CheckComplete();
         passeds[1] = InputMail.GetComponent<IFormInput>().CheckComplete();
         passeds[2] = Cellphone.GetComponent<IFormInput>().CheckComplete();
-        passeds[3] = (bool)ToggleHabeas.GetComponent<IFormInput>().GetValue();
+        //passeds[3] = (bool)ToggleHabeas.GetComponent<IFormInput>().GetValue();
+        print($"{passeds[0]}-{passeds[1]}-{passeds[2]}");
         bool passAll = passeds.ToList().All(x => x== true);
         if (passAll)
-        FormSubmitable.EnableSubmit(passAll);
+            FormSubmitable.EnableSubmit(passAll);
     }
 
 
     public async void Submit()
     {
+        UserData data = new UserData
+        {
+            UID = Guid.NewGuid().ToString(),
+            userName = InputName.GetComponent<IFormInput>().GetValue()?.ToString(),
+            email = InputMail.GetComponent<IFormInput>().GetValue()?.ToString(),
+            phone = Cellphone.GetComponent<IFormInput>().GetValue()?.ToString(),
+            registrationDate = DateTime.UtcNow.ToString("o"),
+            score = ScoreManager.Instance != null ? ScoreManager.Instance.Score : 0
+        };
+
+        NetworkMonitor.Instance.CurrentAdapter.AddUserData(data);
         await Task.Delay(200);
     }
     

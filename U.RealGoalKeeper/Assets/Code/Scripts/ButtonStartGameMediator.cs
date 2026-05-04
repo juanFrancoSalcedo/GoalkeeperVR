@@ -14,6 +14,7 @@ public class ButtonStartGameMediator : BaseButtonAttendant
         GameEventBus.Publish(StateGameType.Practicing);
         shotsManager.CallStartGame();
         alleyManager.CallStartGame();
+        ScoreManager.Instance.ResetScore();
         ManagerAudio.Instance.PlayStart();
     }
 }

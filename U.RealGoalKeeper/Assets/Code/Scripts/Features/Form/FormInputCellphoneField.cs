@@ -10,23 +10,8 @@ public class FormInputCellphoneField : MonoBehaviour, IFormInput
     public event Action<string> OnError;
 
     private void Start() => inputField.onValueChanged.AddListener(CheckInput);
-
-    private void CheckInput(string arg0)
-    {
-        if (CheckComplete())
-            OnUpdateState?.Invoke(arg0);
-        else
-            OnError?.Invoke(errorType);
-    }
-
-    public bool CheckComplete()
-    {
-        return inputField.text.Length.Equals(10);
-    }
-
-    public object GetValue()
-    {
-        return inputField.text;
-    }
+    private void CheckInput(string arg0) => OnUpdateState?.Invoke(arg0);
+    public bool CheckComplete() => inputField.text.Length >= 10;
+    public object GetValue() => inputField.text;
 }
 

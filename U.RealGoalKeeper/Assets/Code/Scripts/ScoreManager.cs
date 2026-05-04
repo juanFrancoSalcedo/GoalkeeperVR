@@ -4,12 +4,18 @@ using System.Runtime.CompilerServices;
 
 public class ScoreManager : Singleton<ScoreManager>
 {
-    public event System.Action<int> OnScoreUpdated;
+    public event Action<int> OnScoreUpdated;
     public int Score => score;
-    private int score = 0;
+    private static int score = 0;
     public void AddScore(int scoreNew) 
     {
         score+= scoreNew;
+        OnScoreUpdated?.Invoke(score);
+    }
+
+    public void ResetScore() 
+    {
+        score = 0;
         OnScoreUpdated?.Invoke(score);
     }
 }
